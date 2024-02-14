@@ -61,6 +61,7 @@ class Queue {
     T peek();
     T pop();
     void clear();
+    T get(int index);
 };
 
 template<class T>
@@ -118,6 +119,12 @@ void Queue<T>::clear()
 {
   _front = _back;
   _count = 0;
+}
+
+template<class T>
+T Queue<T>::get(int index) 
+{
+  return _data[index];
 }
 
 #endif
