@@ -62,6 +62,7 @@ class Queue {
     T pop();
     void clear();
     T get(int index);
+    void shift();
 };
 
 template<class T>
@@ -125,6 +126,15 @@ template<class T>
 T Queue<T>::get(int index) 
 {
   return _data[index];
+}
+
+template<class T>
+void Queue<T>::shift() 
+{
+  for (int index = _front; index < _back; index++)
+  {
+    _data[index] = _data[index+1];
+  }
 }
 
 #endif
